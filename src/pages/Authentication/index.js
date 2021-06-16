@@ -1,12 +1,20 @@
 import React from 'react'
 
+import { useForm } from 'react-hook-form'
 
-const Auth = () => {
+
+const Authentication = () => {
+    const { register, handleSubmit } = useForm()
+
+    const onSubmit = data => console.log(data);
     return (
-        <div>
-            Auth Page
-        </div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <fieldset>Authentication Page</fieldset>
+                <input defaultValue="test" {...register("login", { required: true, maxLength: 20 })}/>
+
+                 <input type="submit" />
+            </form>
     )
 }
 
-export default Auth
+export default Authentication
