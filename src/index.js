@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import './index.css';
-import Landing from './pages/landing/index'
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './other/reportWebVitals';
 
 import Routes from '~/routes'
 

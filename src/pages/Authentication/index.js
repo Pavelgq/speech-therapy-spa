@@ -13,23 +13,27 @@ const Authentication = () => {
 
                 <fieldset className={styles.container}>
                     <legend className={styles.title}>Кто здесь? Входите!</legend>
-                    <input 
-                    type="text" 
-                    className={styles.field} 
-                    placeholder="E-mail"
-                    defaultValue="" 
-                    {...register("login", { required: true, maxLength: 20 })}
-                />
-                {errors.login && <span className={styles.error}>Ошибки </span>}
-                <input 
-                    type="password" 
-                    className={styles.field} 
-                    placeholder="Пароль"
-                    defaultValue="" 
-                    {...register("password", { required: true })}
-                />
-                {errors.login && <span className={styles.error}>Ошибки </span>}
-                 <input type="submit" className={styles.button} />
+                    <div className={styles.wrapper}>
+                        <input 
+                            type="text" 
+                            className={styles.field} 
+                            placeholder="E-mail"
+                            defaultValue="" 
+                            {...register("login", { required: true, maxLength: 20 })}
+                        />
+                        {errors.login && <span className={styles.error}>Введите логин </span>}
+                    </div>
+                    <div className={styles.wrapper}>
+                        <input 
+                            type="password" 
+                            className={styles.field} 
+                            placeholder="Пароль"
+                            defaultValue="" 
+                            {...register("password", { required: true })}
+                        />
+                        {errors.password && <span className={styles.error}>Введите пароль </span>}
+                    </div>
+                    <input type="submit" className={styles.button} />
                 </fieldset>
                 
             </form>

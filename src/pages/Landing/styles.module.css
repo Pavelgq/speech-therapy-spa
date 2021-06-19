@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    display: block;
+    width: 180px;
+    padding: 10px 10px;
+    margin: 10px;
+    border-radius: 10px;
+    color: #22215B;
+    background-color: #FFC700;
+    box-sizing: border-box;
+
+    text-decoration: none;
+    text-align: center;
+
+    text-transform: uppercase;
+}
+
+.link:hover {
+    /* background-color: #f1c218; */
+    color: white
+}
+
+.link:active {
+    opacity: 50%;
+}
