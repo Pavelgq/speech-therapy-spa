@@ -1,71 +1,68 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 
-    border: 0;
-    border-radius: 10px;
-    padding: 10px 30px;
-    margin-top: 20px;
-     box-sizing: border-box;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 30px;
+  margin-top: 20px;
+  box-sizing: border-box;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .title {
-    border: 0;
-    margin-bottom: 10px;
+  border: 0;
+  margin-bottom: 10px;
 
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .field {
-    height: 50px;
-    width: 240px;
-    padding: 10px 20px;
+  height: 50px;
+  width: 240px;
+  padding: 10px 20px;
 
-    border: 1px solid #F1F3F6;
-    border-radius: 10px;
-    box-sizing: border-box;
+  border: 1px solid #f1f3f6;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .error {
-     width: 240px;
-    color: tomato;
-    padding-left: 15px;
-    font-size: 10px;
-    box-sizing: border-box;
+  width: 240px;
+  color: tomato;
+  padding-left: 15px;
+  font-size: 10px;
+  box-sizing: border-box;
 }
 
 .button {
-    height: 50px;
-    border: 2px solid #22215B;
-    border-radius: 16px;
-    padding: 0px 30px;
+  height: 50px;
+  border: 2px solid #22215b;
+  border-radius: 16px;
+  padding: 0px 30px;
 
-    background-color: transparent;
+  background-color: transparent;
 
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .button:hover {
-    background-color: #22215B;
-    color: #E6E5FF;
+  background-color: #22215b;
+  color: #e6e5ff;
 }
 
 .button:active {
-    opacity: 70%;
+  opacity: 70%;
 }

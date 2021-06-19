@@ -1,14 +1,9 @@
-import React, { useState } from 'react'
-
+import React, {useState} from "react";
 
 const VisitCalendar = () => {
-    const [value, onChange] = useState([new Date()]);
+  const [value, onChange] = useState([new Date()]);
 
-    return (
-        <div>   
-           {value}
-        </div>
-    )
-}
+  return <div>{value}</div>;
+};
 
-export default VisitCalendar
+export default VisitCalendar;
