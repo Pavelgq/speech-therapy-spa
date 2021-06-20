@@ -40,7 +40,7 @@ export default (url) => {
       .catch((resError) => {
         // Todo What if this error is 404
         if (!skipGetResponseAfterDestroy) {
-          setError(resError.response);
+          setError(resError.response && resError.response.data);
           setIsLoading(false);
         }
       });

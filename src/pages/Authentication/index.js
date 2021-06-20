@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
+
+import { Link, Redirect } from 'react-router-dom';
 
 import {useForm} from "react-hook-form";
-import useFetch from '@hooks/useFetch'
+import useFetch from "@hooks/useFetch";
+import useLocalStorage from "@hooks/useLocalStorage";
+
+import ErrorMessages from '@components/ErrorMessages/ErrorMessages'
 
 import styles from "./styles.module.css";
 
@@ -13,43 +18,54 @@ const Authentication = () => {
     formState: {errors},
   } = useForm();
 
-  const [data, setData] = useState({});
+  const [isSuccesSubmit, setIsSuccesSubmit] = useState(false)
 
-  const url = '/user/custom';
-  const [{isLoading, response, error}, doFetch] = useFetch(url)
+  const [token, setToken] = useLocalStorage('token');
 
-  console.log(data)
+  const url = "/user/login";
+  const [{isLoading, response, error}, doFetch] = useFetch(url);
+
   useEffect(() => {
-    doFetch({
-      method: 'get',
-      data: {data},
-      headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-
-      }
-    })
-  }, [data])
+    if (!response) {
+            return 
+        }
+        setToken(response.token)
+        setIsSuccesSubmit(true)
+  }, [response])
 
   const onSubmit = (values) => {
-    console.log(values)
-    setData(values)
+    doFetch({
+      method: "post",
+      data: {...values},
+    });
+  };
+
+  if (isSuccesSubmit) {
+    if (response.role === 'admin') {
+      return <Redirect to='/teacher' />
+    } else {
+      return <Redirect to='/student' />
     }
+  }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       <fieldset className={styles.container}>
         <legend className={styles.title}>Кто здесь? Входите!</legend>
         <div className={styles.wrapper}>
+            <ErrorMessages formErrors={errors} backError={error} />
           <input
             type="text"
             className={styles.field}
             placeholder="E-mail"
             defaultValue=""
-            {...register("email", {required: true, maxLength: 20})}
+            {...register("email", {
+              required: true,
+              minLength: 3,
+              pattern:
+                /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
+            })}
           />
-          {errors.email && <span className={styles.error}>Введите логин </span>}
         </div>
         <div className={styles.wrapper}>
           <input
@@ -59,7 +75,6 @@ const Authentication = () => {
             defaultValue=""
             {...register("password", {required: true})}
           />
-          {errors.password && <span className={styles.error}>Введите пароль </span>}
         </div>
         <input type="submit" className={styles.button} />
       </fieldset>

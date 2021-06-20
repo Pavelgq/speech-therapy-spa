@@ -1,0 +1,7 @@
+.error {
+    width: 240px;
+    color: tomato;
+    padding-left: 15px;
+    font-size: 10px;
+    box-sizing: border-box;
+}

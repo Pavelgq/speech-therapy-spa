@@ -39,6 +39,15 @@
   box-sizing: border-box;
 }
 
+.field-error {
+      margin-bottom: 20px;
+      border-width: 1px 1px 1px 10px;
+      border-style: solid;
+      border-color: rgb(191, 22, 80) rgb(191, 22, 80) rgb(191, 22, 80) rgb(236, 89, 144);
+      border-image: initial;
+      background: rgb(251, 236, 242);
+}
+
 .error {
   width: 240px;
   color: tomato;
@@ -66,3 +75,4 @@
 .button:active {
   opacity: 70%;
 }
+
