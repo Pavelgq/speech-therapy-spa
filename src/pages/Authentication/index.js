@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 
-import { Link, Redirect } from 'react-router-dom';
+import {Link, Redirect} from "react-router-dom";
 
 import {useForm} from "react-hook-form";
 import useFetch from "@hooks/useFetch";
 import useLocalStorage from "@hooks/useLocalStorage";
 
-import ErrorMessages from '@components/ErrorMessages/ErrorMessages'
+import ErrorMessages from "@components/ErrorMessages/ErrorMessages";
 
 import styles from "./styles.module.css";
 
@@ -18,20 +18,20 @@ const Authentication = () => {
     formState: {errors},
   } = useForm();
 
-  const [isSuccesSubmit, setIsSuccesSubmit] = useState(false)
+  const [isSuccesSubmit, setIsSuccesSubmit] = useState(false);
 
-  const [token, setToken] = useLocalStorage('token');
+  const [token, setToken] = useLocalStorage("token");
 
   const url = "/user/login";
   const [{isLoading, response, error}, doFetch] = useFetch(url);
 
   useEffect(() => {
     if (!response) {
-            return 
-        }
-        setToken(response.token)
-        setIsSuccesSubmit(true)
-  }, [response])
+      return;
+    }
+    setToken(response.token);
+    setIsSuccesSubmit(true);
+  }, [response]);
 
   const onSubmit = (values) => {
     doFetch({
@@ -41,10 +41,10 @@ const Authentication = () => {
   };
 
   if (isSuccesSubmit) {
-    if (response.role === 'admin') {
-      return <Redirect to='/teacher' />
+    if (response.role === "admin") {
+      return <Redirect to="/teacher" />;
     } else {
-      return <Redirect to='/student' />
+      return <Redirect to="/student" />;
     }
   }
 
@@ -53,7 +53,7 @@ const Authentication = () => {
       <fieldset className={styles.container}>
         <legend className={styles.title}>Кто здесь? Входите!</legend>
         <div className={styles.wrapper}>
-            <ErrorMessages formErrors={errors} backError={error} />
+          <ErrorMessages formErrors={errors} backError={error} />
           <input
             type="text"
             className={styles.field}
