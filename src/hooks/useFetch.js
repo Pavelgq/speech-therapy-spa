@@ -23,7 +23,7 @@ export default (url) => {
       ...options,
       ...{
         headers: {
-          authorization: token ? `Token ${token}` : "",
+          authorization: token ? `${token}` : "",
         },
       },
     };
