@@ -9,7 +9,7 @@ module.exports = {
       "@hooks": path.resolve(__dirname, "./src/hooks/"),
       "@pages": path.resolve(__dirname, "./src/pages/"),
       "@model": path.resolve(__dirname, "./src/model/"),
-      "@styles": path.resolve(__dirname, "./src/styles/")
+      "@styles": path.resolve(__dirname, "./src/styles/"),
     },
   },
 };

@@ -1,18 +1,7 @@
-import React from 'react'
-
+import React from "react";
 
 const Topbar = ({name, userData}) => {
+  return <>Название, Меню, Аватар</>;
+};
 
-    
-
-    return (
-        <>
-            Название,
-            Меню,
-            Аватар
-
-        </>
-    )
-}
-
-export default Topbar
+export default Topbar;

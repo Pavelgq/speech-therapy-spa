@@ -1,9 +1,11 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 import styles from "./Sidebar.module.css";
 
 const Sidebar = ({items}) => {
+  const location = useLocation();
+  console.log(location);
   console.log(items);
   const elements = Object.keys(items).map((el, index) => {
     return (
