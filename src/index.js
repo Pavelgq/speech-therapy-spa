@@ -2,14 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter as Router} from "react-router-dom";
 
+import {createBrowserHistory} from "history";
+
 import "./index.css";
 import reportWebVitals from "./other/reportWebVitals";
 
 import Routes from "~/routes";
+export const history = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router history={history}>
       <Routes />
     </Router>
   </React.StrictMode>,
