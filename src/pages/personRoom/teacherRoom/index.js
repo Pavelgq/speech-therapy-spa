@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 import {useStore} from "effector-react";
 import useFetch from "@hooks/useFetch";
@@ -11,9 +11,13 @@ import Sidebar from "@components/Sidebar/Sidebar";
 import Topbar from "@components/Topbar/Topbar";
 
 import StudentsList from "@pages/studentsList/index";
+import TasksList from "@pages/tasksList/index";
+import LessonList from "@pages/lessonList/index";
+import SoundList from "@pages/soundList/index";
 
 import global from "@styles/global.module.css";
 import styles from "./styles.module.css";
+
 const TeacherRoom = (props) => {
   console.log(props);
   const userData = useStore($currentUser);
@@ -41,9 +45,9 @@ const TeacherRoom = (props) => {
         <Sidebar items={sectionElements} parrentName="teacher" />
         <section className={styles.mainPanel}>
           <Route path="/teacher/students" component={StudentsList} />
-          <Route path="/teacher/sounds" component={StudentsList} />
-          <Route path="/teacher/tasks" component={StudentsList} />
-          <Route path="/teacher/lessons" component={StudentsList} />
+          <Route path="/teacher/sounds" component={SoundList} />
+          <Route path="/teacher/tasks" component={TasksList} />
+          <Route path="/teacher/lessons" component={LessonList} />
         </section>
       </div>
     </main>
