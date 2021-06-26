@@ -1,7 +1,15 @@
 import React from "react";
 
-const Topbar = ({name, userData}) => {
-  return <>Название, Меню, Аватар</>;
+import AuthUserPanel from "@components/UserPanels/AuthUserPanel";
+
+const Topbar = ({name}) => {
+  return (
+    <>
+      <h2>{name}</h2>
+
+      <AuthUserPanel />
+    </>
+  );
 };
 
 export default Topbar;

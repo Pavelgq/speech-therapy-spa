@@ -1,13 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const LessonList = () => {
+  return <div>Lesson list</div>;
+};
 
-    return (
-        <div>
-            Lesson list
-        </div>
-    )
-}
-
-    
-export default LessonList
+export default LessonList;

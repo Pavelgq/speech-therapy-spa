@@ -2,11 +2,6 @@ import React, {useState, useEffect} from "react";
 
 import {Route} from "react-router-dom";
 
-import {useStore} from "effector-react";
-import useFetch from "@hooks/useFetch";
-
-import {$currentUser, changeCurrentUserData, fetchCurrentUser} from "@model/currentUser";
-
 import Sidebar from "@components/Sidebar/Sidebar";
 import Topbar from "@components/Topbar/Topbar";
 
@@ -19,18 +14,6 @@ import global from "@styles/global.module.css";
 import styles from "./styles.module.css";
 
 const TeacherRoom = (props) => {
-  console.log(props);
-  const userData = useStore($currentUser);
-
-  const url = "/user/custom";
-  const [{isLoading, response, error}, doFetch] = useFetch(url);
-
-  useEffect(() => {
-    doFetch({
-      method: "get",
-    });
-  }, []);
-
   const [sectionElements] = useState({
     students: "Ученики",
     sounds: "Коллекция звуков",
@@ -39,8 +22,7 @@ const TeacherRoom = (props) => {
   });
   return (
     <main className={global.wrapper}>
-      <Topbar name="Кабинет преподователя" user={userData} />
-      <h2>Кабинет преподователя</h2>
+      <Topbar name="Кабинет преподавателя" />
       <div className={global.container}>
         <Sidebar items={sectionElements} parrentName="teacher" />
         <section className={styles.mainPanel}>
