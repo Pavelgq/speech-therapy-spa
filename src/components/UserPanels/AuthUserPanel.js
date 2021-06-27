@@ -5,8 +5,8 @@ import {useStore} from "effector-react";
 
 import {$currentUser, $currentUserError, fetchCurrentUserFx} from "@model/currentUser";
 
-import Badge from '@material-ui/core/Badge';
-import MailIcon from '@material-ui/icons/Mail';
+import Badge from "@material-ui/core/Badge";
+import MailIcon from "@material-ui/icons/Mail";
 
 import Loading from "@components/Loading/Loading";
 import FetchError from "@components/FetchError/FetchError";
@@ -25,16 +25,16 @@ const AuthUserPanel = () => {
   }, []);
 
   return (
-   <div className={styles.container}>
+    <div className={styles.container}>
       {isLoading && <Loading />} {error && <FetchError />}
       {userData && (
-          <>
+        <>
           <Link to="#" className={styles.link}>
             <Badge badgeContent={4} color="primary">
-                <MailIcon />
+              <MailIcon />
             </Badge>
           </Link>
-       
+
           <div className={styles.imageWrapper}>
             <img
               src="https://bizraise.pro/wp-content/uploads/2014/09/no-avatar-300x300.png"
@@ -57,7 +57,7 @@ const AuthUserPanel = () => {
               </Link>
             </div>
           </div>
-          </>
+        </>
       )}
     </div>
   );

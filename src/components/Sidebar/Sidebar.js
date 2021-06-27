@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import {Link, useLocation} from "react-router-dom";
 
 import styles from "./Sidebar.module.css";
 
-const Sidebar = ({items, parrentName}) => {
-  const location = useLocation();
-  console.log(location);
-  console.log(items);
+const Sidebar = ({items, parrentName, toggle, handleSidebar}) => {
+
   const routeName = parrentName ? `/${parrentName}` : "";
   const elements = Object.keys(items).map((el, index) => {
     return (
@@ -19,8 +17,11 @@ const Sidebar = ({items, parrentName}) => {
   });
 
   return (
-    <nav className={styles.sidebar}>
-      <ul className={styles.list}>{elements}</ul>
+    <nav className={toggle ? `${styles.sidebar} ${styles.showSidebar}` : styles.sidebar} onClick={handleSidebar}>
+      <a className={styles.closeBtn} onClick={handleSidebar}>&times;</a>
+      <ul className={styles.list}>
+        {elements}
+        </ul>
     </nav>
   );
 };

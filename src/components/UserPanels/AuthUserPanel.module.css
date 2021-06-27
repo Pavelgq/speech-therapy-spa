@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 10px;
 }
 
 .wrapper {
@@ -9,9 +10,9 @@
 }
 
 .userInfo {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .userName {
@@ -19,21 +20,20 @@
 }
 
 .imageWrapper {
-    width: 50px;
-    height: 50px;
-     border-radius: 50%;
-     border: 1px solid #eee;
-     overflow: hidden;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin-right: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
 }
 
 .userAvatar {
   height: 100%;
   width: auto;
- 
 }
 
 .userStatus {

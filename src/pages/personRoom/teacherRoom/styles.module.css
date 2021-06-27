@@ -1,3 +1,10 @@
+.container {
+   display: flex;
+   align-items: center;
+}
+
 .mainPanel {
   display: flex;
+
+  height: 100%;
 }

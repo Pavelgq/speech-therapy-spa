@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import {Route} from "react-router-dom";
 
-import Sidebar from "@components/Sidebar/Sidebar";
+
 import Topbar from "@components/Topbar/Topbar";
 
 import StudentsList from "@pages/studentsList/index";
@@ -16,15 +16,14 @@ import styles from "./styles.module.css";
 const TeacherRoom = (props) => {
   const [sectionElements] = useState({
     students: "Ученики",
-    sounds: "Коллекция звуков",
+    sounds: "Коллекция",
     tasks: "Задания",
     lessons: "Уроки",
   });
   return (
-    <main className={global.wrapper}>
-      <Topbar name="Кабинет преподавателя" />
-      <div className={global.container}>
-        <Sidebar items={sectionElements} parrentName="teacher" />
+    <main className={global.mainWrapper}>
+      <Topbar name="Кабинет преподавателя" menuItems={sectionElements} parrentName="teacher"/>
+      <div className={styles.container}>
         <section className={styles.mainPanel}>
           <Route path="/teacher/students" component={StudentsList} />
           <Route path="/teacher/sounds" component={SoundList} />
