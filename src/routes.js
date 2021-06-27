@@ -11,12 +11,10 @@ import NotFound from "@pages/notFound/index";
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/" component={Landing}>
-        <Route path="/student/:slug" component={StudentRoom} />
-        <Route path="/teacher" component={TeacherRoom} />
-        <Route path="/login" component={Authentication} />
-      </Route>
-
+      <Route path="/" component={Landing} exact></Route>
+      <Route path="/student/:slug" component={StudentRoom} />
+      <Route path="/teacher" component={TeacherRoom} />
+      <Route path="/login" component={Authentication} />
       <Route component={NotFound} />
     </Switch>
   );

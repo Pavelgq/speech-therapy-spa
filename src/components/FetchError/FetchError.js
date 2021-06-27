@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const FetchError = () => {
-  return  "Ошибка...";
+  return "Ошибка...";
 };
 
-export default FetchError
+export default FetchError;

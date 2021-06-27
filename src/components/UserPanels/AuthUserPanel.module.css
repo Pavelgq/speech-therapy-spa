@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.userInfo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.userName {
+  margin: 0;
+}
+
+.imageWrapper {
+    width: 50px;
+    height: 50px;
+     border-radius: 50%;
+     border: 1px solid #eee;
+     overflow: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-right: 5px;
+}
+
+.userAvatar {
+  height: 100%;
+  width: auto;
+ 
+}
+
+.userStatus {
+  font-size: 12px;
+  color: #888;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 12px;
+  margin-right: 10px;
+}

@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  min-height: 60px;
+
+  margin-bottom: 10px;
+}
+
+.title {
+  margin: 0;
+  margin-left: 5px;
+}
