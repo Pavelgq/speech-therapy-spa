@@ -2,9 +2,9 @@ import React, {useState, useEffect} from "react";
 
 import {Route} from "react-router-dom";
 
-
 import Topbar from "@components/Topbar/Topbar";
 
+import TeacherInformation from './components/TeacherInformation'
 import StudentsList from "@pages/studentsList/index";
 import TasksList from "@pages/tasksList/index";
 import LessonList from "@pages/lessonList/index";
@@ -22,9 +22,14 @@ const TeacherRoom = (props) => {
   });
   return (
     <main className={global.mainWrapper}>
-      <Topbar name="Кабинет преподавателя" menuItems={sectionElements} parrentName="teacher"/>
+      <Topbar
+        name="Кабинет преподавателя"
+        menuItems={sectionElements}
+        parrentName="teacher"
+      />
       <div className={styles.container}>
         <section className={styles.mainPanel}>
+          <Route path="/teacher" component={TeacherInformation} exact />
           <Route path="/teacher/students" component={StudentsList} />
           <Route path="/teacher/sounds" component={SoundList} />
           <Route path="/teacher/tasks" component={TasksList} />
