@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import {Link, useLocation} from "react-router-dom";
 
-import { HiOutlineChevronLeft } from "react-icons/hi";
-
+import {HiOutlineChevronLeft} from "react-icons/hi";
 
 import styles from "./Sidebar.module.css";
 
@@ -19,13 +18,13 @@ const Sidebar = ({items, parrentName, toggle, handleSidebar}) => {
   });
 
   return (
-    <nav
-      className={toggle ? `${styles.sidebar} ${styles.showSidebar}` : styles.sidebar} 
-    >
+    <nav className={toggle ? `${styles.sidebar} ${styles.showSidebar}` : styles.sidebar}>
       <a className={styles.closeBtn} onClick={handleSidebar}>
-        <HiOutlineChevronLeft/>
+        <HiOutlineChevronLeft />
       </a>
-      <ul className={styles.list} onClick={handleSidebar}>{elements}</ul>
+      <ul className={styles.list} onClick={handleSidebar}>
+        {elements}
+      </ul>
     </nav>
   );
 };

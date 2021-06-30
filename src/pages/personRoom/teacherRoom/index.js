@@ -4,7 +4,7 @@ import {Route} from "react-router-dom";
 
 import Topbar from "@components/Topbar/Topbar";
 
-import TeacherInformation from './components/TeacherInformation'
+import TeacherInformation from "./components/TeacherInformation";
 import StudentsList from "@pages/studentsList/index";
 import TasksList from "@pages/tasksList/index";
 import LessonList from "@pages/lessonList/index";
