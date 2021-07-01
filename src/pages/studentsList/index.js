@@ -7,6 +7,8 @@ import {useEffect} from "react";
 
 import StudentCard from "./components/StudentCard";
 
+import styles from "./styles.module.css";
+
 const StudentsList = () => {
   const isLoading = useStore(fetchAllUserFx.pending);
   const error = useStore($allUserError);
@@ -23,9 +25,9 @@ const StudentsList = () => {
     : null;
 
   return (
-    <div>
-      StudentsList
-      {items}
+    <div className={styles.container}>
+      Список учеников
+      <ul className={styles.list}>{items}</ul>
     </div>
   );
 };

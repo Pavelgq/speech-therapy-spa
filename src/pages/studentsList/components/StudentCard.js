@@ -1,29 +1,35 @@
 import React from "react";
 
-import styles from './StudentCard.module.css'
+import styles from "./StudentCard.module.css";
 
 const StudentCard = ({info}) => {
   return (
     <li className={styles.card}>
-        <div className={styles.container}>
-            <h4 className={styles.name}>
-                {info.firstName}
-                {info.lastName}
-            </h4>
-            <p className={styles.info}>
-                <span className={styles.textRow}>Класс: {info.class}</span>
-                <span className={styles.textRow}>Опыт: {info.exp}</span>
-                <span className={styles.textRow}>Уроки: {info.lessons}</span>
-            </p>
-            <button className={styles.button}>Профиль</button>
+      <div className={styles.container}>
+        <div className={styles.imageWrapper}>
+          <img
+            src="https://bizraise.pro/wp-content/uploads/2014/09/no-avatar-300x300.png"
+            className={styles.userAvatar}
+            alt={`Аватар ученика ${info.firstName} ${info.lastName}`}
+          />
         </div>
+        <p className={styles.nameWrapper}>
+          <h4 className={styles.name}>{info.firstName}</h4>
+          <h4 className={styles.name}>{info.lastName}</h4>
+        </p>
+    </div>
+        <p className={styles.info}>
+          <span className={styles.textRow}>Класс: {info.class}</span>
+          <span className={styles.textRow}>Опыт: {info.exp}</span>
+          <span className={styles.textRow}>Уроки: {info.lessons}</span>
+        </p>
+        <button className={styles.button}>Профиль</button>
       
     </li>
   );
 };
 
 export default StudentCard;
-
 
 /**
  *  "role": "user",
